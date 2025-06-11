@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Ugadi 2K25</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Raleway:wght@600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../upstyle.css">
+	<style>
+		header::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%;
+      height: 100%;
+      background: url('../pics/ugadi1.jpg') center/cover no-repeat;
+      opacity: 0.4;
+      z-index: -1;
+    }
+	</style>
+</head>
+
+<body>
+  <header>
+    <h1>Embrace the spirit of new beginnings! Cherish the traditions, savor the delicacies, and celebrate Ugadi together!</h1>
+    <p>Join us for a vibrant celebration filled with cultural performances, exciting competitions, and a festive spirit that truly captures the essence of 	this auspicious occasion.</p>
+    <div class="event-info">
+      <p><strong>Date:</strong> 29th March, 2025 | 
+         <strong>Venue:</strong> Open Auditorium (OAT), VLITS | 
+         <strong>Time:</strong> 10am to 6pm
+      </p>
+    </div>
+    <div class="timer" id="countdown"></div>
+  </header>
+
+  <section class="combo-section">
+  <div class="combo-content">
+    <div class="combo-text">
+      <h2>What’s in Store?</h2>
+      <ul>
+        <li><strong>Cultural & Traditional Performances </strong> – Experience mesmerizing folk dances, soulful music, and artistic expressions that 	beautifully showcase the essence of Ugadi.</li>
+        <li><strong>Guest Speakers </strong> – Gain insights from esteemed guests, including our chairman sir, Dr. Lavu Rathaiah garu, as they share their 	thoughts on the cultural significance of Ugadi.</li>
+        <li><strong>Fun Activities & Competitions </strong> – Join exciting games and contests and stand a chance to win amazing prizes!</li>
+        <li><strong>Traditional Ugadi Pachadi </strong> – Experience the symbolic flavors of life through this special festive delicacy.</li>
+        <li><strong>Delicious Festive Feast </strong> – Savor a spread of mouthwatering Ugadi specialties, bringing the taste of tradition to life.</li>
+      </ul>
+      <h2>Who Can Join?</h2>
+      <p>This event is open to all students, faculty, and staff. We invite everyone to come together and celebrate this joyous occasion as a community!</p>
+    </div>
+    <div class="combo-img">
+      <img src="../pics/ugadi.jpeg" alt="Farewell Celebration" />
+    </div>
+  </div>
+</section>
+
+  <div class="registration">
+    <h2>Registration</h2>
+    <p><strong>Deadline:</strong> 27th April, 2025</p>
+    <p>Participation in competitions is exclusively for registered students. Prior registration is required to take part. Don’t miss out on this incredible 	celebration! Register now to secure your spot.</p>
+    <a href="../form.html" target="_blank"><button class="register-btn">Register Now</button></a>
+  </div>
+
+  <footer>
+    <p>Let’s welcome the new year with joy and togetherness! See you there! </p>
+  </footer>
+
+<script>
+  // Set the date and time of the event
+  const eventDate = new Date("March 29, 2026 10:00:00").getTime();
+
+  const countdown = document.getElementById("countdown");
+
+  const x = setInterval(() => {
+    const now = new Date().getTime();
+    const distance = eventDate - now;
+
+    if (distance < 0) {
+      clearInterval(x);
+      countdown.innerHTML = "<h2>The event has started! 🎉</h2>";
+      return;
+    }
+
+    const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+    const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+    const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+    countdown.innerHTML = `
+      <p><strong>${days}</strong> days 
+         <strong>${hours}</strong> hours 
+         <strong>${minutes}</strong> minutes 
+         <strong>${seconds}</strong> seconds</p>
+    `;
+  }, 1000);
+</script>
+
+</body>
+</html>

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Upcoming Events</title>
+    <style>
+        body {
+            background-color: #ffffff;
+            font-family: Arial, sans-serif;
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+	
+
+        .event-container {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        .event {
+            background-color: #ff5733;
+            padding: 15px;
+            margin: 15px 0;
+            border-left: 5px solid #ffffff;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+            transition: transform 0.3s ease;
+            text-decoration: none;
+            color: white;
+	    border-radius: 10px;
+        }
+        .event:hover {
+            transform: scale(1.05);
+        }
+        .date {
+            background-color: #ff5733;
+            color: #666;
+            padding: 10px 15px;
+            font-weight: bold;
+            border-radius: 5px;
+        }
+        .event-details {
+            text-align: left;
+            flex-grow: 1;
+            margin-left: 15px;
+        }
+        .event-name {
+            font-size: 18px;
+            font-weight: bold;
+        }
+        .event-location {
+            font-size: 14px;
+            color: #bbb;
+        }
+    </style>
+</head>
+<body>
+    <h1 style="color: #ff5733;">Upcoming Events</h1>
+    <div class="event-container">
+        <a href="pages/ugadi.html" class="event">
+            <div class="date" style="background-color:white">MAR 29</div>
+            <div class="event-details">
+                <div class="event-name">Ugadi Uthsavam</div>
+            </div>
+        </a>
+        <a href="pages/farewell.html" class="event">
+            <div class="date" style="background-color:white">APR 12</div>
+            <div class="event-details">
+                <div class="event-name">Farewell Celebrations</div>
+            </div>
+        </a>
+    </div>
+</body>
+</html>  

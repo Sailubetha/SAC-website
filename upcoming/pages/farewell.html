@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+	<title>Farewell 2K25</title>
+	<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Raleway:wght@600&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="../upstyle.css">
+	<style>
+		header::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%;
+      height: 100%;
+      background: url('../pics/farewell1.jpg') center/cover no-repeat;
+      opacity: 0.4;
+      z-index: -1;
+    }
+	</style>
+</head>
+
+<body>
+
+<header>
+	<h1>A Grand Farewell to Our Beloved Final Years!</h1>
+	<p>Join us as we celebrate the Class of 2K25 with an evening of cherished memories, heartfelt goodbyes, and joyous celebrations.</p>
+	<div class="event-info">
+	<p>
+		<strong>Date:</strong> 12th April, 2025 | 
+         	<strong>Venue:</strong> Open Auditorium (OAT), VLITS | 
+         	<strong>Time:</strong> 10am to 6pm
+	</p>
+	</div>
+	<div class="timer" id="countdown"></div>
+</header>
+
+<section class="combo-section">
+  <div class="combo-content">
+    <div class="combo-text">
+      <h2>What’s in Store?</h2>
+      <ul>
+        <li><strong>Tributes & Speeches</strong> – Inspiring words from faculty, staff, and fellow students.</li>
+        <li><strong>Memory Lane</strong> – Relive unforgettable college memories through photos and videos.</li>
+        <li><strong>Cultural Performances</strong> – Watch talented students perform live.</li>
+        <li><strong>Awards & Recognitions</strong> – Celebrate achievements of the graduating class.</li>
+        <li><strong>Musical Performances & Dance</strong> – Enjoy music and dance to celebrate the night in style.</li>
+        <li><strong>Dinner & Socializing</strong> – Share a meal and make memories with friends and mentors.</li>
+      </ul>
+      <h2>Who Can Join?</h2>
+      <p>This event is open to all students, faculty, and staff. Let's honor our graduating class and make it a celebration to remember!</p>
+    </div>
+    <div class="combo-img">
+      <img src="../pics/farewell.jpg" alt="Farewell Celebration" />
+    </div>
+  </div>
+</section>
+
+  <div class="registration">
+    <h2>Registration</h2>
+    <p><strong>Deadline:</strong> 9th April, 2025</p>
+    <p>To help us plan accordingly, please register by the deadline. Let’s send off our seniors with joy, gratitude, and love!</p>
+    <a href="../form.html" target="_blank"><button class="register-btn">Register Now</button></a>
+  </div>
+
+  <footer>
+    <p>Let’s make this farewell unforgettable! See you there! 🎉</p>
+  </footer>
+
+<script>
+  // Set the date and time of the event
+  const eventDate = new Date("March 29, 2026 10:00:00").getTime();
+
+  const countdown = document.getElementById("countdown");
+
+  const x = setInterval(() => {
+    const now = new Date().getTime();
+    const distance = eventDate - now;
+
+    if (distance < 0) {
+      clearInterval(x);
+      countdown.innerHTML = "<h2>The event has started! 🎉</h2>";
+      return;
+    }
+
+    const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+    const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+    const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+    countdown.innerHTML = `
+      <p><strong>${days}</strong> days 
+         <strong>${hours}</strong> hours 
+         <strong>${minutes}</strong> minutes 
+         <strong>${seconds}</strong> seconds</p>
+    `;
+  }, 1000);
+</script>
+
+</body>
+</html>

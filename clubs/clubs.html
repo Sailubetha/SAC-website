@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SAC Body</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel&display=swap" rel="stylesheet">
+    <style>
+    @import url('https://fonts.googleapis.com/css2?family=Cinzel&display=swap');
+
+body {
+    font-family: 'Segoe UI', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f5f5f5;
+    color: #333;
+}
+
+/* Animations */
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeIn {
+    0% {opacity: 0;}
+    100% {opacity: 1;}
+}
+
+h2, h3 {
+    font-family: 'Cinzel', serif;
+    color: #5a4f7c;
+    animation: fadeIn 1.5s ease-in;
+}
+
+/* Convenor Section */
+.convenor-section {
+    text-align: center;
+    padding: 20px;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    margin-bottom: 30px;
+    animation: slideUp 1.2s ease-out;
+}
+
+.convenor-images {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.convenor-img {
+    position: relative;
+    display: inline-block;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.convenor-img img {
+    display: block;
+    border-radius: 12px;
+    height: 220px;
+    width: auto;
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.convenor-img:hover img {
+    transform: scale(1.05);
+    box-shadow: 0 6px 18px rgba(90, 79, 124, 0.3);
+}
+
+.convenor-img .caption {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    background: rgba(90, 79, 124, 0.85);
+    color: #fff;
+    text-align: center;
+    padding: 8px;
+    font-size: 13px;
+    font-weight: 600;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+}
+
+.convenor-img:hover .caption {
+    opacity: 1;
+}
+
+/* Club Glimpses Gallery */
+.horizontal-scroll-gallery {
+    display: flex;
+    overflow-x: auto;
+    gap: 20px;
+    padding: 20px;
+    scroll-snap-type: x mandatory;
+    animation: fadeIn 1.5s ease-in;
+}
+
+.hover-info {
+    position: relative;
+    display: inline-block;
+    scroll-snap-align: start;
+}
+
+.hover-info img {
+    display: block;
+    border-radius: 10px;
+    height: 200px;
+    width: auto;
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.hover-info:hover img {
+    transform: scale(1.05);
+    box-shadow: 0 6px 18px rgba(90, 79, 124, 0.3);
+}
+
+.hover-info .caption {
+    position: absolute;
+    bottom: 0;
+    background: rgba(90, 79, 124, 0.8);
+    color: #fff;
+    width: 100%;
+    text-align: center;
+    padding: 8px 0;
+    font-size: 14px;
+    font-weight: bold;
+    border-radius: 0 0 10px 10px;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+}
+
+.hover-info:hover .caption {
+    opacity: 1;
+}
+
+/* Committees */
+.committee-list {
+    background: #fff;
+    padding: 20px;
+    margin: 30px auto;
+    border-radius: 10px;
+    max-width: 600px;
+    box-shadow: 0px 4px 10px rgba(0,0,0,0.1);
+    text-align: left;
+    animation: fadeIn 1.5s ease-in;
+}
+
+.committee-list h3 {
+    font-family: 'Cinzel', serif;
+    color: #5a4f7c;
+}
+
+.committee-list ul {
+    list-style-type: "✨ ";
+    padding-left: 20px;
+    color: #333;
+}
+
+.committee-list li {
+    margin: 8px 0;
+    font-weight: 500;
+    transition: transform 0.2s ease;
+}
+
+.committee-list li:hover {
+    transform: translateX(5px);
+    color: #5a4f7c;
+}
+
+</style>
+
+</head>
+<body>
+    <div class="convenor-section">
+        <h2> SAC Convenors & Co-Convenors</h2>
+<p style="margin: 15px 0;">Leading SAC with passion and purpose are our dynamic SAC Convenors.<br>
+        <b>They ensure every student finds opportunities to shine.</b></p>
+
+        <div class="convenor-images">
+            <div class="convenor-img">
+                <img src="pics/usharani.jpg" alt="Principal">
+                <div class="caption">Dr. U. Usha Rani<br>[Professor, HOD - BS&H]</div>
+            </div>
+            <div class="convenor-img">
+                <img src="pics/murthy.jpeg" alt="Murthy">
+                <div class="caption">Dr. P. G. S. N. Murthy<br>[Professor, Mech Dept]</div>
+            </div>
+        </div>
+<br>       
+	<p style="margin: 15px 0;">Supporting this vision are our dedicated Co-Convenors.<br>
+
+        <ul>
+		<li><b>Ms. P. Padmini Rani [Asst. Prof, CSE]</b></li>
+            
+                <li><b>Ms. J. Supriya [Asst. Prof, ECE]</b></li>
+           <br>
+        
+                <p>They foster a cheerful and inclusive campus culture.</p>
+
+        <p style="font-style: italic; font-weight: 500; margin-top: 20px;">
+            Together, this leadership team fuels the spirit of our college, shaping an extraordinary and unparalleled journey for every student!
+        </p>
+    </div>
+
+    <h2 style="text-align:center;">📸 Club Glimpses</h2>
+    <div class="horizontal-scroll-gallery">
+        <div class="hover-info">
+            <img src="pics/lit9.jpeg" alt="Literary Club">
+            <div class="caption">Literary Club</div>
+        </div>
+        <div class="hover-info">
+            <img src="pics/danceclub.jpeg" alt="Dance Club">
+            <div class="caption">Dance Club</div>
+        </div>
+        <div class="hover-info">
+            <img src="pics/swaraclub.jpeg" alt="Swara Club">
+            <div class="caption">Singing Club</div>
+        </div>
+        <div class="hover-info">
+            <img src="pics/sports.jpeg" alt="Sports Club">
+            <div class="caption">Sports Club</div>
+        </div>
+    </div>
+
+    <div class="committee-list">
+        <h3>🌟 Core Committee</h3>
+        <ul>
+            <li>President – Syed Jameera</li>
+            <li>Vice President – Upputuri Harini</li>
+            <li>General Secretary – Yenduluri Kiran Kumar</li>
+            <li>Joint Secretary – Matta Bhanu Prakash</li>
+        </ul>
+    </div>
+
+    <div class="committee-list">
+        <h3>🤝 Organizing Committee (Club Leads)</h3>
+        <ul>
+            <li>Literary Club – B. Shanmukha Narasimha</li>
+            <li>Music Club – Challa Ramya</li>
+            <li>Dance Club – Thota Gnaneshwar Vasu</li>
+            <li>Multimedia Club – P. Venu Babu</li>
+            <li>Fine Arts Club – Md. Khaja Mohiddin</li>
+            <li>Technical Club – M. Rishyanth Reddy</li>
+            <li>Sports Club – P. Murali</li>
+        </ul>
+    </div>
+</body>
+</html>

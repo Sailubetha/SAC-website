@@ -1,0 +1,226 @@
+:root {
+      --primary: #FF6B6B;
+      --secondary: #FF9F1C;
+      --accent: #FFF3B0;
+      --bg: #FFF8F0;
+      --text: #2E2E2E;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Quicksand', sans-serif;
+      background-color: var(--bg);
+      color: var(--text);
+      line-height: 1.7;
+    }
+
+    header {
+      background: linear-gradient(135deg, var(--primary), var(--secondary));
+      color: white;
+      padding: 3rem 1rem 5rem;
+      text-align: center;
+      position: relative;
+    }
+
+    header::after {
+      content: "";
+      position: absolute;
+      bottom: -25px;
+      left: 0;
+      width: 100%;
+      height: 50px;
+      background: var(--bg);
+      clip-path: polygon(0 0, 100% 100%, 0% 100%);
+    }
+
+    header h1 {
+      font-size: 2.5rem;
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+    }
+
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 2rem 1rem;
+    }
+
+    .section {
+      background: white;
+      border-radius: 16px;
+      padding: 2rem;
+      margin: 3rem 0;
+      box-shadow: 0 8px 18px rgba(0, 0, 0, 0.05);
+      border-left: 8px solid var(--secondary);
+      transition: transform 0.3s ease;
+    }
+
+    .section:hover {
+      transform: scale(1.01);
+    }
+
+    .section h2 {
+      color: var(--primary);
+      font-size: 1.8rem;
+      margin-bottom: 1rem;
+    }
+
+    .section h3 {
+      margin-top: 1.5rem;
+      color: var(--secondary);
+    }
+
+    .highlight {
+      font-weight: 600;
+      color: var(--primary);
+    }
+
+    .event-info {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      background-color: var(--accent);
+      padding: 1rem;
+      border-radius: 10px;
+      margin-top: 1rem;
+    }
+
+    .event-info div {
+      margin: 0.5rem 0;
+    }
+.section-content img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.15);
+}
+
+    ul {
+      margin-top: 0.5rem;
+      padding-left: 1.3rem;
+    }
+
+    ul li {
+      margin-bottom: 0.6rem;
+    }
+
+    footer {
+      background: linear-gradient(to right, var(--primary), var(--secondary));
+      color: white;
+      text-align: center;
+      padding: 1rem;
+      border-top-left-radius: 40px;
+      border-top-right-radius: 40px;
+      margin-top: 3rem;
+    }
+
+    .section-content {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: flex-start;
+      gap: 1.5rem;
+    }
+
+    .section-text {
+      flex: 1;
+    }
+
+    .section-content img {
+      max-width: 300px;
+      border-radius: 12px;
+      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
+      flex-shrink: 0;
+    }
+
+    .image-stack {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    @media (max-width: 768px) {
+      header h1 {
+        font-size: 2rem;
+      }
+
+      .event-info {
+        flex-direction: column;
+      }
+
+      .section-content {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .section-content img {
+        max-width: 100%;
+      }
+
+      .image-stack {
+        align-items: center;
+      }
+    }
+@media (max-width: 768px) {
+  .image-slider img {
+    width: 250px;
+    height: 160px;
+  }
+}
+.image-slider {
+  display: flex;
+  overflow-x: auto;
+  gap: 16px;
+  padding: 1rem 0;
+  scroll-snap-type: x mandatory;
+  scrollbar-width: thin;
+}
+
+.image-slider img {
+  flex-shrink: 0;
+  width: 300px;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 12px;
+  scroll-snap-align: start;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.image-slider img:hover {
+  transform: scale(1.05);
+}
+
+.image-stack {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  max-height: 400px; /* limits the visible height */
+  overflow-y: auto;   /* enables vertical scroll */
+  padding-right: 10px;
+  scrollbar-width: thin;
+  scrollbar-color: var(--primary) transparent;
+}
+
+.image-stack::-webkit-scrollbar {
+  width: 6px;
+}
+.image-stack::-webkit-scrollbar-thumb {
+  background-color: var(--primary);
+  border-radius: 8px;
+}
+
+.section-content img {
+  max-width: 300px;
+  border-radius: 12px;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Hover effect */
+.section-content img:hover {
+  transform: scale(1.01);
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.15);
+}

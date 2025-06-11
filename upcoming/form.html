@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Registration Form</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f4;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+
+    .form-container {
+      background: white;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      width: 320px;
+      max-height: 95vh;
+      overflow-y: auto;
+    }
+
+    h2 {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    label {
+      font-weight: bold;
+    }
+
+    input, select {
+      width: 100%;
+      padding: 8px;
+      margin: 5px 0 15px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+
+    .register-btn {
+      width: 100%;
+      padding: 10px;
+      background-color: #ff5733;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .register-btn:hover {
+      background-color: black;
+    }
+
+    .error {
+      color: red;
+      font-size: 12px;
+    }
+
+    .checkbox-group {
+      margin-bottom: 15px;
+    }
+
+    .checkbox-group label {
+      font-weight: normal;
+    }
+  </style>
+</head>
+<body>
+  <div class="form-container">
+    <h2>Register</h2>
+    <form id="registrationForm" onsubmit="return validateForm()">
+      <label for="name">Full Name:</label>
+      <input type="text" id="name" placeholder="Enter your name" />
+      <div class="error" id="nameError"></div>
+
+      <label for="branch">Branch:</label>
+      <select id="branch">
+        <option value="">Select your branch</option>
+        <option value="CSE">CSE</option>
+        <option value="CSE-DS">CSE-DS</option>
+        <option value="CSE-AI">CSE-AI</option>
+        <option value="CSE-AI&ML">CSE-AI&ML</option>
+        <option value="AI&ML">AI&ML</option>
+        <option value="IT">IT</option>
+        <option value="ECE">ECE</option>
+        <option value="EEE">EEE</option>
+        <option value="MECH">MECH</option>
+        <option value="CE">CE</option>
+      </select>
+      <div class="error" id="branchError"></div>
+
+      <label for="section">Section:</label>
+      <input type="text" id="section" placeholder="Enter your section (e.g., A)" />
+      <div class="error" id="sectionError"></div>
+
+      <label for="regId">Registration ID:</label>
+      <input type="text" id="regId" placeholder="e.g., 23FE1A0515" />
+      <div class="error" id="regIdError"></div>
+
+      <label for="phone">Phone:</label>
+      <input type="tel" id="phone" placeholder="Enter your phone number" />
+      <div class="error" id="phoneError"></div>
+
+      <div class="checkbox-group">
+        <label>Clubs Interested In:</label><br />
+        <input type="checkbox" id="literary" value="Literary" /> Literary<br />
+        <input type="checkbox" id="dancing" value="Dancing" /> Dancing<br />
+        <input type="checkbox" id="singing" value="Singing" /> Singing<br />
+      </div>
+
+      <button type="submit" class="register-btn">Register Now</button>
+    </form>
+	<div id="result" style="margin-top: 20px; padding: 10px; background: #e6ffe6; border-radius: 6px;"></div>
+
+  </div>
+
+  <script>
+  function validateRegistrationNumber(regNumber) {
+    const regPattern = /^[0-9]{2}[A-Z]{2}[0-9][A-Z][0-9]{4}$/;
+    return regPattern.test(regNumber);
+  }
+
+  function validateForm() {
+    let isValid = true;
+
+    const name = document.getElementById("name").value.trim();
+    const branch = document.getElementById("branch").value;
+    const section = document.getElementById("section").value.trim();
+    const regId = document.getElementById("regId").value.trim().toUpperCase();
+    const phone = document.getElementById("phone").value.trim();
+
+    document.getElementById("nameError").innerText = "";
+    document.getElementById("branchError").innerText = "";
+    document.getElementById("sectionError").innerText = "";
+    document.getElementById("regIdError").innerText = "";
+    document.getElementById("phoneError").innerText = "";
+
+    if (name === "") {
+      document.getElementById("nameError").innerText = "Name is required.";
+      isValid = false;
+    }
+
+    if (branch === "") {
+      document.getElementById("branchError").innerText = "Please select a branch.";
+      isValid = false;
+    }
+
+    if (section === "") {
+      document.getElementById("sectionError").innerText = "Section is required.";
+      isValid = false;
+    }
+
+    if (!validateRegistrationNumber(regId)) {
+      document.getElementById("regIdError").innerText = "Invalid Registration ID format (e.g., 23FE1A0515).";
+      isValid = false;
+    }
+
+    const phonePattern = /^[0-9]{10}$/;
+    if (!phonePattern.test(phone)) {
+      document.getElementById("phoneError").innerText = "Enter a valid 10-digit phone number.";
+      isValid = false;
+    }
+
+    if (isValid) {
+      const clubs = [];
+      if (document.getElementById("literary").checked) clubs.push("Literary");
+      if (document.getElementById("dancing").checked) clubs.push("Dancing");
+      if (document.getElementById("singing").checked) clubs.push("Singing");
+
+      const output = `
+        <h3>🎉 Registration Successful!</h3>
+        <p><strong>Name:</strong> ${name}</p>
+        <p><strong>Branch:</strong> ${branch}</p>
+        <p><strong>Section:</strong> ${section}</p>
+        <p><strong>Registration ID:</strong> ${regId}</p>
+        <p><strong>Phone:</strong> ${phone}</p>
+        <p><strong>Clubs Interested:</strong> ${clubs.length > 0 ? clubs.join(", ") : "None"}</p>
+      `;
+      document.getElementById("result").innerHTML = output;
+
+      document.getElementById("registrationForm").reset();
+    }
+
+    return false; // prevent form from actually submitting
+  }
+</script>
+
+</body>
+</html>

@@ -1,0 +1,132 @@
+h1, h2, h3 {
+      font-family: 'Playfair Display', serif;
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Raleway', sans-serif;
+      background-color: #fff;
+    }
+
+    header {
+      position: relative;
+      color: black;
+      text-align: center;
+      padding: 60px 20px;
+      overflow: hidden;
+      z-index: 1;
+    }
+
+    
+    header h1, header p, .event-info, .timer {
+      position: relative;
+      z-index: 2;
+    }
+
+    .event-info {
+      margin-top: 20px;
+      font-size: 1.1em;
+      background: rgba(0, 0, 0, 0.5);
+      padding: 10px 20px;
+      border-radius: 8px;
+      display: inline-block;
+      animation: fadeIn 3s ease-out;
+    }
+
+    .combo-section {
+      background: linear-gradient(135deg, #ff5733 60%, #ff7961);
+      color: white;
+      margin: 40px 20px;
+      padding: 30px;
+      border-radius: 15px;
+      box-shadow: 0 0 15px rgba(0,0,0,0.2);
+      transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+    }
+
+    .combo-section:hover {
+      transform: scale(1.02);
+      box-shadow: 0 0 30px rgba(0, 0, 0, 0.2);
+      opacity: 0.95;
+    }
+
+    .combo-section ul {
+      padding-left: 20px;
+    }
+
+    .combo-section h2 {
+      margin-top: 0;
+      font-size: 1.6em;
+    }
+
+    .register-btn {
+      background-color: white;
+      color: #ff5733;
+      border: 2px solid #ff5733;
+      padding: 12px 30px;
+      font-size: 1.1em;
+      font-weight: bold;
+      border-radius: 30px;
+      cursor: pointer;
+      transition: all 0.4s ease;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    }
+
+    .register-btn:hover {
+      background-color: #ff5733;
+      color: white;
+      transform: scale(1.05);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+    }
+
+    .registration {
+      text-align: center;
+      margin: 40px 20px;
+    }
+.combo-content {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.combo-text {
+  flex: 1 1 60%;
+  padding-right: 20px;
+}
+
+.combo-img {
+  flex: 1 1 35%;
+  text-align: center;
+}
+
+.combo-img img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 12px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.15);
+  transition: transform 0.3s ease;
+}
+
+.combo-img img:hover {
+  transform: scale(1.03);
+}
+
+    footer {
+      background: #222;
+      color: white;
+      text-align: center;
+      padding: 20px;
+    }
+.timer h2 {
+  margin: 10px 0 5px;
+  font-size: 1.5em;
+}
+
+.timer p {
+  font-size: 1.2em;
+  background: rgba(255, 255, 255, 0.2);
+  display: inline-block;
+  padding: 10px 20px;
+  border-radius: 8px;
+  font-weight: bold;
+}
